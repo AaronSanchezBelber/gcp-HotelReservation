@@ -1,0 +1,8 @@
+README.md
+setup.py
+MLOPS_HotelReservation.egg-info/PKG-INFO
+MLOPS_HotelReservation.egg-info/SOURCES.txt
+MLOPS_HotelReservation.egg-info/dependency_links.txt
+MLOPS_HotelReservation.egg-info/requires.txt
+MLOPS_HotelReservation.egg-info/top_level.txt
+src/__init__.py

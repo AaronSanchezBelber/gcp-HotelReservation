@@ -1,0 +1,173 @@
+2026-01-01 13:00:09,212 - INFO - Succesfully read the YAML file
+2026-01-01 13:00:30,105 - INFO - Succesfully read the YAML file
+2026-01-01 13:00:30,106 - INFO - Data Ingestion started with hotel-bucket-aaron and file is  HotelReservations.csv
+2026-01-01 13:00:30,106 - INFO - Starting data ingestion process
+2026-01-01 13:00:33,252 - INFO - CSV file is sucesfully downloaded to artifacts/raw\raw.csv
+2026-01-01 13:00:33,252 - INFO - Starting the splitting process
+2026-01-01 13:00:33,769 - INFO - Train data saved to artifacts/raw\train.csv
+2026-01-01 13:00:33,770 - INFO - Test data saved to artifacts/raw\test.csv
+2026-01-01 13:00:33,773 - INFO - Data ingestion completed sucesfully
+2026-01-01 13:00:33,774 - INFO - Data ingestion completed
+2026-01-01 16:17:17,699 - INFO - Succesfully read the YAML file
+2026-01-01 16:17:17,700 - INFO - Loading data from RAW directory
+2026-01-01 16:17:17,700 - INFO - Loading data
+2026-01-01 16:17:17,809 - INFO - Loading data
+2026-01-01 16:17:17,838 - INFO - Starting our Data Processing step
+2026-01-01 16:17:17,838 - INFO - Dropping the columns
+2026-01-01 16:17:17,886 - INFO - Applying Label Encoding
+2026-01-01 16:17:17,906 - INFO - Label Mappings are : 
+2026-01-01 16:17:17,906 - INFO - type_of_meal_plan : {'Meal Plan 1': np.int64(0), 'Meal Plan 2': np.int64(1), 'Meal Plan 3': np.int64(2), 'Not Selected': np.int64(3)}
+2026-01-01 16:17:17,906 - INFO - required_car_parking_space : {np.int64(0): np.int64(0), np.int64(1): np.int64(1)}
+2026-01-01 16:17:17,906 - INFO - room_type_reserved : {'Room_Type 1': np.int64(0), 'Room_Type 2': np.int64(1), 'Room_Type 3': np.int64(2), 'Room_Type 4': np.int64(3), 'Room_Type 5': np.int64(4), 'Room_Type 6': np.int64(5), 'Room_Type 7': np.int64(6)}
+2026-01-01 16:17:17,906 - INFO - market_segment_type : {'Aviation': np.int64(0), 'Complementary': np.int64(1), 'Corporate': np.int64(2), 'Offline': np.int64(3), 'Online': np.int64(4)}
+2026-01-01 16:17:17,906 - INFO - repeated_guest : {np.int64(0): np.int64(0), np.int64(1): np.int64(1)}
+2026-01-01 16:17:17,906 - INFO - booking_status : {'Canceled': np.int64(0), 'Not_Canceled': np.int64(1)}
+2026-01-01 16:17:17,906 - INFO - Doing Skewness HAndling
+2026-01-01 16:17:17,912 - INFO - Starting our Data Processing step
+2026-01-01 16:17:17,912 - INFO - Dropping the columns
+2026-01-01 16:17:17,919 - INFO - Applying Label Encoding
+2026-01-01 16:17:17,927 - INFO - Label Mappings are : 
+2026-01-01 16:17:17,927 - INFO - type_of_meal_plan : {'Meal Plan 1': np.int64(0), 'Meal Plan 2': np.int64(1), 'Meal Plan 3': np.int64(2), 'Not Selected': np.int64(3)}
+2026-01-01 16:17:17,927 - INFO - required_car_parking_space : {np.int64(0): np.int64(0), np.int64(1): np.int64(1)}
+2026-01-01 16:17:17,928 - INFO - room_type_reserved : {'Room_Type 1': np.int64(0), 'Room_Type 2': np.int64(1), 'Room_Type 3': np.int64(2), 'Room_Type 4': np.int64(3), 'Room_Type 5': np.int64(4), 'Room_Type 6': np.int64(5), 'Room_Type 7': np.int64(6)}
+2026-01-01 16:17:17,928 - INFO - market_segment_type : {'Aviation': np.int64(0), 'Complementary': np.int64(1), 'Corporate': np.int64(2), 'Offline': np.int64(3), 'Online': np.int64(4)}
+2026-01-01 16:17:17,928 - INFO - repeated_guest : {np.int64(0): np.int64(0), np.int64(1): np.int64(1)}
+2026-01-01 16:17:17,928 - INFO - booking_status : {'Canceled': np.int64(0), 'Not_Canceled': np.int64(1)}
+2026-01-01 16:17:17,928 - INFO - Doing Skewness HAndling
+2026-01-01 16:17:17,932 - INFO - Handling Imbalanced Data
+2026-01-01 16:17:22,978 - INFO - Data balanced sucesffuly
+2026-01-01 16:17:22,980 - INFO - Handling Imbalanced Data
+2026-01-01 16:17:23,010 - INFO - Data balanced sucesffuly
+2026-01-01 16:17:23,011 - INFO - Starting our Feature selection step
+2026-01-01 16:17:27,961 - INFO - Features selected : ['lead_time' 'no_of_special_requests' 'avg_price_per_room' 'arrival_month'
+ 'arrival_date' 'market_segment_type' 'no_of_week_nights'
+ 'no_of_weekend_nights' 'room_type_reserved' 'type_of_meal_plan']
+2026-01-01 16:17:27,963 - INFO - Feature slection completed sucesfully
+2026-01-01 16:17:27,979 - INFO - Saving our data in processed folder
+2026-01-01 16:17:28,111 - INFO - Data saved sucesfuly to artifacts/processed\processed_train.csv
+2026-01-01 16:17:28,111 - INFO - Saving our data in processed folder
+2026-01-01 16:17:28,153 - INFO - Data saved sucesfuly to artifacts/processed\processed_test.csv
+2026-01-01 16:17:28,153 - INFO - Data processing completed sucesfully
+2026-01-01 17:04:01,072 - WARNING - Retrying (Retry(total=6, connect=6, read=7, redirect=7, status=7)) after connection broken by 'NewConnectionError("HTTPConnection(host='localhost', port=5000): Failed to establish a new connection: [WinError 10061] No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión")': /api/2.0/mlflow/runs/create
+2026-01-01 17:04:09,562 - WARNING - Retrying (Retry(total=5, connect=5, read=7, redirect=7, status=7)) after connection broken by 'NewConnectionError("HTTPConnection(host='localhost', port=5000): Failed to establish a new connection: [WinError 10061] No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión")': /api/2.0/mlflow/runs/create
+2026-01-01 17:04:22,089 - WARNING - Retrying (Retry(total=4, connect=4, read=7, redirect=7, status=7)) after connection broken by 'NewConnectionError("HTTPConnection(host='localhost', port=5000): Failed to establish a new connection: [WinError 10061] No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión")': /api/2.0/mlflow/runs/create
+2026-01-01 17:04:42,282 - WARNING - Retrying (Retry(total=3, connect=3, read=7, redirect=7, status=7)) after connection broken by 'NewConnectionError("HTTPConnection(host='localhost', port=5000): Failed to establish a new connection: [WinError 10061] No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión")': /api/2.0/mlflow/runs/create
+2026-01-01 17:05:18,414 - WARNING - Retrying (Retry(total=2, connect=2, read=7, redirect=7, status=7)) after connection broken by 'NewConnectionError("HTTPConnection(host='localhost', port=5000): Failed to establish a new connection: [WinError 10061] No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión")': /api/2.0/mlflow/runs/create
+2026-01-01 17:06:26,731 - WARNING - Retrying (Retry(total=1, connect=1, read=7, redirect=7, status=7)) after connection broken by 'NewConnectionError("HTTPConnection(host='localhost', port=5000): Failed to establish a new connection: [WinError 10061] No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión")': /api/2.0/mlflow/runs/create
+2026-01-01 17:08:30,775 - WARNING - Retrying (Retry(total=0, connect=0, read=7, redirect=7, status=7)) after connection broken by 'NewConnectionError("HTTPConnection(host='localhost', port=5000): Failed to establish a new connection: [WinError 10061] No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión")': /api/2.0/mlflow/runs/create
+2026-01-01 17:08:34,808 - ERROR - Error in model training pipeline API request to http://localhost:5000/api/2.0/mlflow/runs/create failed with exception HTTPConnectionPool(host='localhost', port=5000): Max retries exceeded with url: /api/2.0/mlflow/runs/create (Caused by NewConnectionError("HTTPConnection(host='localhost', port=5000): Failed to establish a new connection: [WinError 10061] No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión"))
+2026-01-01 17:12:33,655 - INFO - Starting our Model Training pipeline
+2026-01-01 17:12:33,657 - INFO - Starting our MLFLOW experimentation
+2026-01-01 17:12:33,657 - INFO - Logging the training and testing datset to MLFLOW
+2026-01-01 17:12:33,742 - INFO - Loading data from artifacts/processed\processed_train.csv
+2026-01-01 17:12:33,742 - INFO - Loading data
+2026-01-01 17:12:33,788 - INFO - Loading data from artifacts/processed\processed_test.csv
+2026-01-01 17:12:33,788 - INFO - Loading data
+2026-01-01 17:12:33,807 - INFO - Data splitted sucefully for Model Training
+2026-01-01 17:12:33,807 - INFO - Intializing our model
+2026-01-01 17:12:33,807 - INFO - Starting our Hyperparamter tuning
+2026-01-01 17:12:33,807 - INFO - Starting our Hyperparamter tuning
+2026-01-01 17:12:53,984 - INFO - Hyperparamter tuning completed
+2026-01-01 17:12:53,984 - INFO - Best paramters are : {'boosting_type': 'gbdt', 'learning_rate': np.float64(0.1293700315892974), 'max_depth': 23, 'n_estimators': 314, 'num_leaves': 94}
+2026-01-01 17:12:53,984 - INFO - Evaluating our model
+2026-01-01 17:12:54,060 - INFO - Accuracy Score : 0.8785969084423305
+2026-01-01 17:12:54,060 - INFO - Precision Score : 0.8634703196347032
+2026-01-01 17:12:54,060 - INFO - Recall Score : 0.8994054696789536
+2026-01-01 17:12:54,060 - INFO - F1 Score : 0.8810716365754222
+2026-01-01 17:12:54,061 - INFO - saving the model
+2026-01-01 17:12:54,138 - INFO - Model saved to artifacts/models/lgbm_model.pkl
+2026-01-01 17:12:54,138 - INFO - Logging the model into MLFLOW
+2026-01-01 17:12:56,348 - INFO - Logging Params and metrics to MLFLOW
+2026-01-01 17:12:56,418 - INFO - Model Training sucesfullly completed
+2026-01-01 17:13:37,388 - INFO - Starting our Model Training pipeline
+2026-01-01 17:13:37,389 - INFO - Starting our MLFLOW experimentation
+2026-01-01 17:13:37,390 - INFO - Logging the training and testing datset to MLFLOW
+2026-01-01 17:13:37,454 - INFO - Loading data from artifacts/processed\processed_train.csv
+2026-01-01 17:13:37,454 - INFO - Loading data
+2026-01-01 17:13:37,491 - INFO - Loading data from artifacts/processed\processed_test.csv
+2026-01-01 17:13:37,491 - INFO - Loading data
+2026-01-01 17:13:37,508 - INFO - Data splitted sucefully for Model Training
+2026-01-01 17:13:37,509 - INFO - Intializing our model
+2026-01-01 17:13:37,509 - INFO - Starting our Hyperparamter tuning
+2026-01-01 17:13:37,509 - INFO - Starting our Hyperparamter tuning
+2026-01-01 17:13:56,180 - INFO - Hyperparamter tuning completed
+2026-01-01 17:13:56,180 - INFO - Best paramters are : {'boosting_type': 'gbdt', 'learning_rate': np.float64(0.1293700315892974), 'max_depth': 23, 'n_estimators': 314, 'num_leaves': 94}
+2026-01-01 17:13:56,180 - INFO - Evaluating our model
+2026-01-01 17:13:56,268 - INFO - Accuracy Score : 0.8785969084423305
+2026-01-01 17:13:56,268 - INFO - Precision Score : 0.8634703196347032
+2026-01-01 17:13:56,268 - INFO - Recall Score : 0.8994054696789536
+2026-01-01 17:13:56,268 - INFO - F1 Score : 0.8810716365754222
+2026-01-01 17:13:56,269 - INFO - saving the model
+2026-01-01 17:13:56,351 - INFO - Model saved to artifacts/models/lgbm_model.pkl
+2026-01-01 17:13:56,352 - INFO - Logging the model into MLFLOW
+2026-01-01 17:13:58,549 - INFO - Logging Params and metrics to MLFLOW
+2026-01-01 17:13:58,604 - INFO - Model Training sucesfullly completed
+2026-01-01 19:41:06,110 - INFO - Succesfully read the YAML file
+2026-01-01 19:41:06,111 - INFO - Data Ingestion started with hotel-bucket-aaron and file is  HotelReservations.csv
+2026-01-01 19:41:06,112 - INFO - Starting data ingestion process
+2026-01-01 19:41:09,244 - ERROR - Error while downloading the csv file
+2026-01-01 19:41:09,244 - ERROR - CustomException : Error in C:\Users\Lenovo\Desktop\krish-udemy\mlops-hotelreservation-2026\src\data_ingestion.py , line 25 : Failed to downlaod csv file 
+2026-01-01 19:41:09,244 - INFO - Data ingestion completed
+2026-01-01 19:41:09,246 - INFO - Succesfully read the YAML file
+2026-01-01 19:41:09,246 - INFO - Loading data from RAW directory
+2026-01-01 19:41:09,247 - INFO - Loading data
+2026-01-01 19:41:09,357 - INFO - Loading data
+2026-01-01 19:41:09,391 - INFO - Starting our Data Processing step
+2026-01-01 19:41:09,391 - INFO - Dropping the columns
+2026-01-01 19:41:09,426 - INFO - Applying Label Encoding
+2026-01-01 19:41:09,450 - INFO - Label Mappings are : 
+2026-01-01 19:41:09,450 - INFO - type_of_meal_plan : {'Meal Plan 1': np.int64(0), 'Meal Plan 2': np.int64(1), 'Meal Plan 3': np.int64(2), 'Not Selected': np.int64(3)}
+2026-01-01 19:41:09,451 - INFO - required_car_parking_space : {np.int64(0): np.int64(0), np.int64(1): np.int64(1)}
+2026-01-01 19:41:09,451 - INFO - room_type_reserved : {'Room_Type 1': np.int64(0), 'Room_Type 2': np.int64(1), 'Room_Type 3': np.int64(2), 'Room_Type 4': np.int64(3), 'Room_Type 5': np.int64(4), 'Room_Type 6': np.int64(5), 'Room_Type 7': np.int64(6)}
+2026-01-01 19:41:09,452 - INFO - market_segment_type : {'Aviation': np.int64(0), 'Complementary': np.int64(1), 'Corporate': np.int64(2), 'Offline': np.int64(3), 'Online': np.int64(4)}
+2026-01-01 19:41:09,452 - INFO - repeated_guest : {np.int64(0): np.int64(0), np.int64(1): np.int64(1)}
+2026-01-01 19:41:09,452 - INFO - booking_status : {'Canceled': np.int64(0), 'Not_Canceled': np.int64(1)}
+2026-01-01 19:41:09,452 - INFO - Doing Skewness HAndling
+2026-01-01 19:41:09,460 - INFO - Starting our Data Processing step
+2026-01-01 19:41:09,460 - INFO - Dropping the columns
+2026-01-01 19:41:09,472 - INFO - Applying Label Encoding
+2026-01-01 19:41:09,482 - INFO - Label Mappings are : 
+2026-01-01 19:41:09,482 - INFO - type_of_meal_plan : {'Meal Plan 1': np.int64(0), 'Meal Plan 2': np.int64(1), 'Meal Plan 3': np.int64(2), 'Not Selected': np.int64(3)}
+2026-01-01 19:41:09,482 - INFO - required_car_parking_space : {np.int64(0): np.int64(0), np.int64(1): np.int64(1)}
+2026-01-01 19:41:09,482 - INFO - room_type_reserved : {'Room_Type 1': np.int64(0), 'Room_Type 2': np.int64(1), 'Room_Type 3': np.int64(2), 'Room_Type 4': np.int64(3), 'Room_Type 5': np.int64(4), 'Room_Type 6': np.int64(5), 'Room_Type 7': np.int64(6)}
+2026-01-01 19:41:09,482 - INFO - market_segment_type : {'Aviation': np.int64(0), 'Complementary': np.int64(1), 'Corporate': np.int64(2), 'Offline': np.int64(3), 'Online': np.int64(4)}
+2026-01-01 19:41:09,482 - INFO - repeated_guest : {np.int64(0): np.int64(0), np.int64(1): np.int64(1)}
+2026-01-01 19:41:09,482 - INFO - booking_status : {'Canceled': np.int64(0), 'Not_Canceled': np.int64(1)}
+2026-01-01 19:41:09,483 - INFO - Doing Skewness HAndling
+2026-01-01 19:41:09,492 - INFO - Handling Imbalanced Data
+2026-01-01 19:41:16,429 - INFO - Data balanced sucesffuly
+2026-01-01 19:41:16,431 - INFO - Handling Imbalanced Data
+2026-01-01 19:41:16,457 - INFO - Data balanced sucesffuly
+2026-01-01 19:41:16,457 - INFO - Starting our Feature selection step
+2026-01-01 19:41:20,975 - INFO - Features selected : ['lead_time' 'no_of_special_requests' 'avg_price_per_room' 'arrival_month'
+ 'arrival_date' 'market_segment_type' 'no_of_week_nights'
+ 'no_of_weekend_nights' 'room_type_reserved' 'type_of_meal_plan']
+2026-01-01 19:41:20,979 - INFO - Feature slection completed sucesfully
+2026-01-01 19:41:21,002 - INFO - Saving our data in processed folder
+2026-01-01 19:41:21,163 - INFO - Data saved sucesfuly to artifacts/processed\processed_train.csv
+2026-01-01 19:41:21,164 - INFO - Saving our data in processed folder
+2026-01-01 19:41:21,207 - INFO - Data saved sucesfuly to artifacts/processed\processed_test.csv
+2026-01-01 19:41:21,207 - INFO - Data processing completed sucesfully
+2026-01-01 19:41:26,858 - INFO - Starting our Model Training pipeline
+2026-01-01 19:41:26,858 - INFO - Starting our MLFLOW experimentation
+2026-01-01 19:41:26,859 - INFO - Logging the training and testing datset to MLFLOW
+2026-01-01 19:41:26,975 - INFO - Loading data from artifacts/processed\processed_train.csv
+2026-01-01 19:41:26,975 - INFO - Loading data
+2026-01-01 19:41:27,014 - INFO - Loading data from artifacts/processed\processed_test.csv
+2026-01-01 19:41:27,014 - INFO - Loading data
+2026-01-01 19:41:27,029 - INFO - Data splitted sucefully for Model Training
+2026-01-01 19:41:27,029 - INFO - Intializing our model
+2026-01-01 19:41:27,029 - INFO - Starting our Hyperparamter tuning
+2026-01-01 19:41:27,029 - INFO - Starting our Hyperparamter tuning
+2026-01-01 19:41:43,435 - INFO - Hyperparamter tuning completed
+2026-01-01 19:41:43,436 - INFO - Best paramters are : {'boosting_type': 'gbdt', 'learning_rate': np.float64(0.1293700315892974), 'max_depth': 23, 'n_estimators': 314, 'num_leaves': 94}
+2026-01-01 19:41:43,436 - INFO - Evaluating our model
+2026-01-01 19:41:43,536 - INFO - Accuracy Score : 0.8785969084423305
+2026-01-01 19:41:43,536 - INFO - Precision Score : 0.8634703196347032
+2026-01-01 19:41:43,536 - INFO - Recall Score : 0.8994054696789536
+2026-01-01 19:41:43,536 - INFO - F1 Score : 0.8810716365754222
+2026-01-01 19:41:43,537 - INFO - saving the model
+2026-01-01 19:41:43,641 - INFO - Model saved to artifacts/models/lgbm_model.pkl
+2026-01-01 19:41:43,641 - INFO - Logging the model into MLFLOW
+2026-01-01 19:41:45,872 - INFO - Logging Params and metrics to MLFLOW
+2026-01-01 19:41:45,945 - INFO - Model Training sucesfullly completed
