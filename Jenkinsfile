@@ -2,20 +2,20 @@ pipeline {
     agent any
 
     environment {
-        VENV_DIR     = 'venv'                               # Python virtual environment
-        GCP_PROJECT  = 'hotelreservation-482911'            # GCP Project ID
-        GCLOUD_PATH  = '/var/jenkins_home/google-cloud-sdk/bin'  # gcloud binary path
+        VENV_DIR    = 'venv'                                // Python virtual environment
+        GCP_PROJECT = 'hotelreservation-482911'             // GCP Project ID
+        GCLOUD_PATH = '/var/jenkins_home/google-cloud-sdk/bin' // gcloud path
     }
 
     stages {
 
         // =========================
-        // ======== CI PART ========
+        // ========= CI ============
         // =========================
 
         stage('CI - Clone GitHub Repository') {
             steps {
-                # Clone the repository from GitHub
+                // Clone the GitHub repository
                 echo 'Cloning Github repo to Jenkins............'
                 checkout scmGit(
                     branches: [[name: '*/main']],
@@ -28,62 +28,83 @@ pipeline {
             }
         }
 
-        stage('CI - Setup Python Environment & Install Dependencies') {
+        stage('CI - Setup Python & Install Dependencies') {
             steps {
-                # Create Python virtual environment and install dependencies
-                echo 'Setting up Virtual Environment and Installing Dependencies............'
+                // Create virtual environment and install dependencies
+                echo 'Setting up Python virtual environment............'
                 sh '''
-                    python --version                         # Check Python version
-                    python -m venv ${VENV_DIR}               # Create venv
-                    . ${VENV_DIR}/bin/activate               # Activate venv
-                    pip install --upgrade pip                # Upgrade pip
-                    pip install -e .                         # Install project dependencies
+                    # Check Python version
+                    python --version
+
+                    # Create virtual environment
+                    python -m venv ${VENV_DIR}
+
+                    # Activate virtual environment
+                    . ${VENV_DIR}/bin/activate
+
+                    # Upgrade pip
+                    pip install --upgrade pip
+
+                    # Install project dependencies
+                    pip install -e .
                 '''
             }
         }
 
         stage('CI - Build & Push Docker Image to GCR') {
             steps {
-                # Authenticate to GCP and push Docker image
-                echo 'Building and Pushing Docker Image to GCR.............'
+                // Build and push Docker image
+                echo 'Building and pushing Docker image to GCR.............'
                 withCredentials([
                     file(credentialsId: 'gcp-key', variable: 'GOOGLE_APPLICATION_CREDENTIALS')
                 ]) {
                     sh '''
-                        export PATH=$PATH:${GCLOUD_PATH}     # Add gcloud to PATH
+                        # Add gcloud to PATH
+                        export PATH=$PATH:${GCLOUD_PATH}
 
+                        # Authenticate with GCP
                         gcloud auth activate-service-account \
-                            --key-file=${GOOGLE_APPLICATION_CREDENTIALS}  # GCP auth
+                            --key-file=${GOOGLE_APPLICATION_CREDENTIALS}
 
-                        gcloud config set project ${GCP_PROJECT}            # Set project
-                        gcloud auth configure-docker --quiet               # Docker auth
+                        # Set GCP project
+                        gcloud config set project ${GCP_PROJECT}
 
-                        docker build -t gcr.io/${GCP_PROJECT}/ml-project:latest .  # Build image
-                        docker push gcr.io/${GCP_PROJECT}/ml-project:latest        # Push image
+                        # Configure Docker authentication
+                        gcloud auth configure-docker --quiet
+
+                        # Build Docker image
+                        docker build -t gcr.io/${GCP_PROJECT}/ml-project:latest .
+
+                        # Push Docker image
+                        docker push gcr.io/${GCP_PROJECT}/ml-project:latest
                     '''
                 }
             }
         }
 
         // =========================
-        // ======== CD PART ========
+        // ========= CD ============
         // =========================
 
         stage('CD - Deploy to Google Cloud Run') {
             steps {
-                # Deploy the Docker image to Cloud Run
+                // Deploy application to Cloud Run
                 echo 'Deploying to Google Cloud Run.............'
                 withCredentials([
                     file(credentialsId: 'gcp-key', variable: 'GOOGLE_APPLICATION_CREDENTIALS')
                 ]) {
                     sh '''
-                        export PATH=$PATH:${GCLOUD_PATH}     # Add gcloud to PATH
+                        # Add gcloud to PATH
+                        export PATH=$PATH:${GCLOUD_PATH}
 
+                        # Authenticate with GCP
                         gcloud auth activate-service-account \
-                            --key-file=${GOOGLE_APPLICATION_CREDENTIALS}  # GCP auth
+                            --key-file=${GOOGLE_APPLICATION_CREDENTIALS}
 
-                        gcloud config set project ${GCP_PROJECT}            # Set project
+                        # Set GCP project
+                        gcloud config set project ${GCP_PROJECT}
 
+                        # Deploy to Cloud Run
                         gcloud run deploy ml-project \
                             --image=gcr.io/${GCP_PROJECT}/ml-project:latest \
                             --platform=managed \
