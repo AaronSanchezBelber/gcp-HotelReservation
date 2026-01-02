@@ -25,25 +25,16 @@ pipeline {
             }
         }
 
-        stage('Install Python') {
-            steps {
-                sh '''
-                apt-get update
-                apt-get install -y python3 python3-venv python3-pip
-                ln -sf /usr/bin/python3 /usr/bin/python
-                '''
-            }
-        }
-
         stage('Setting up our Virtual Environment and Installing dependancies') {
             steps {
                 script {
                     echo 'Setting up our Virtual Environment and Installing dependancies............'
                     sh '''
-                    python -m venv ${VENV_DIR}
-                    . ${VENV_DIR}/bin/activate
-                    pip install --upgrade pip
-                    pip install -e .
+                        python --version
+                        python -m venv ${VENV_DIR}
+                        . ${VENV_DIR}/bin/activate
+                        pip install --upgrade pip
+                        pip install -e .
                     '''
                 }
             }
@@ -51,6 +42,8 @@ pipeline {
 
     }
 }
+
+        
 
 
 //         stage('Building and Pushing Docker Image to GCR'){
