@@ -8,6 +8,7 @@ pipeline {
     }
 
     stages {
+
         stage('Cloning Github repo to Jenkins') {
             steps {
                 script {
@@ -23,23 +24,24 @@ pipeline {
                 }
             }
         }
+
+        stage('Setting up our Virtual Environment and Installing dependancies') {
+            steps {
+                script {
+                    echo 'Setting up our Virtual Environment and Installing dependancies............'
+                    sh '''
+                    python -m venv ${VENV_DIR}
+                    . ${VENV_DIR}/bin/activate
+                    pip install --upgrade pip
+                    pip install -e .
+                    '''
+                }
+            }
+        }
+
     }
 }
 
-
-//         stage('Setting up our Virtual Environment and Installing dependancies'){
-//             steps{
-//                 script{
-//                     echo 'Setting up our Virtual Environment and Installing dependancies............'
-//                     sh '''
-//                     python -m venv ${VENV_DIR}
-//                     . ${VENV_DIR}/bin/activate
-//                     pip install --upgrade pip
-//                     pip install -e .
-//                     '''
-//                 }
-//             }
-//         }
 
 //         stage('Building and Pushing Docker Image to GCR'){
 //             steps{
