@@ -1,22 +1,16 @@
 pipeline {
-    agent {
-        docker {
-            image 'python:3.11-slim'
-            args '-u root -v /var/run/docker.sock:/var/run/docker.sock'
-        }
-    }
+    agent any
 
     environment {
         VENV_DIR = 'venv'
         GCP_PROJECT = "mlops-new-447207"
-        GCLOUD_PATH = "/google-cloud-sdk/bin"
+        GCLOUD_PATH = "/var/jenkins_home/google-cloud-sdk/bin"
     }
 
     stages {
 
         stage('Cloning Github repo to Jenkins') {
             steps {
-                echo 'Cloning Github repo to Jenkins............'
                 checkout scmGit(
                     branches: [[name: '*/main']],
                     userRemoteConfigs: [[
@@ -27,19 +21,12 @@ pipeline {
             }
         }
 
-        stage('Install system dependencies') {
+        stage('Install Python') {
             steps {
                 sh '''
                 apt-get update
-                apt-get install -y curl gnupg docker.io
-                '''
-            }
-        }
-
-        stage('Install Google Cloud SDK') {
-            steps {
-                sh '''
-                curl -sSL https://sdk.cloud.google.com | bash
+                apt-get install -y python3 python3-venv python3-pip
+                ln -sf /usr/bin/python3 /usr/bin/python
                 '''
             }
         }
